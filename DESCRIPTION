@@ -11,4 +11,10 @@ Description: This package downloads free ebooks from Springer based on a PDF rec
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
-Imports: tidyverse, glue
+Imports:
+  dplyr,
+  glue,
+  purrr,
+  tidyr
+Depends: 
+    R (>= 3.1.0)
