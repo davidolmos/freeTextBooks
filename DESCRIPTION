@@ -7,7 +7,7 @@ Maintainer: David Olmos Corral <davidolmoscorral@gmail.com>
 Description: This package downloads free ebooks from Springer based on a PDF received via WhatsApp on April 30th 2020.
       The Package uses a CSV data file containing all required information to download and name the files.
       Ebooks are available in two froats: (1) PDF (all ebooks), (2) EPUB (some ebooks).
-      Ebooks are stored in subdirectory "output".
+      Ebooks are stored in the working directory.
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
@@ -18,3 +18,4 @@ Imports:
   tidyr
 Depends: 
     R (>= 3.1.0)
+RoxygenNote: 7.1.0

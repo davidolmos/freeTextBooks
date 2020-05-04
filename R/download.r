@@ -4,7 +4,7 @@
 #'        The Package uses a CSV data file containing all required information to download and name the files.
 #'        Ebooks are available in two formats: (1) PDF (all ebooks), (2) EPUB (some ebooks).
 #'        Formats can be selected by parameter "mode" ("all" -default-, "pdf", "epub")
-#'        Ebooks are stored in subdirectory "output".
+#'        Ebooks are stored in the working directory.
 #'
 #' @param
 #'
