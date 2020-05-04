@@ -14,10 +14,10 @@
 #'
 #' @export
 
-library("glue")
-library("tidyverse")
-
 download_ebooks <- function(mode = "all") {
+
+  library("glue")
+  library("tidyverse")
 
   # Defines download function call using safely to capture errors (e.g. HTTP 404, Not Found) and setting binary download mode
   safe_download <- safely(~ download.file(.x , .y, mode = "wb"))
