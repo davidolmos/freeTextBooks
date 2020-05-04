@@ -18,4 +18,7 @@ Imports:
   tidyr
 Depends: 
     R (>= 3.1.0)
+<<<<<<< HEAD
 RoxygenNote: 7.1.0
+=======
+>>>>>>> 9ca5b347427a2ffc67ac32831cda7717355437c7
