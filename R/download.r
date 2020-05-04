@@ -23,13 +23,8 @@ download_ebooks <- function(mode = "all") {
   safe_download <- safely(~ download.file(.x , .y, mode = "wb"))
 
   # Read csv file with required information to download each book
-  list_df <- read.csv("data/springer.csv", header = TRUE)
-
-  # Read in dataframe columns into variables
-  isbn <- list_df$isbn
-  title <- list_df$title
-  author <- list_df$author
-  edition <- list_df$edition
+  load("springer_ebooks.RData", .GlobalEnv)
+  attach(list_df)
 
   # Perform pdf dowload
   if (mode == "all" | mode == "pdf") {
@@ -43,7 +38,7 @@ download_ebooks <- function(mode = "all") {
     # Creates names for the Ebook files
     names_pdf <-
       expand_grid(isbn) %>%
-      glue_data("output/{title} - {author} - {edition}.pdf")
+      glue_data("{title} - {author} - {edition}.pdf")
 
     # Perform download and store ebook files
     walk2(url_pdf, names_pdf, safe_download)
@@ -62,7 +57,7 @@ download_ebooks <- function(mode = "all") {
     # Creates names for the Ebook files
     names_epub <-
       expand_grid(isbn) %>%
-      glue_data("output/{title} - {author} - {edition}.epub")
+      glue_data("{title} - {author} - {edition}.epub")
 
     # Perform download and store ebook files
     walk2(url_epub, names_epub, safe_download)
