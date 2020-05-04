@@ -23,7 +23,7 @@ download_ebooks <- function(mode = "all") {
   safe_download <- safely(~ download.file(.x , .y, mode = "wb"))
 
   # Read csv file with required information to download each book
-  load("springer_ebooks.RData", .GlobalEnv)
+  list_df <- readRDS("springer_ebooks.RData")
   attach(list_df)
 
   # Perform pdf dowload
